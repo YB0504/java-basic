@@ -21,6 +21,7 @@ public class JavaTset7 {
         students.add(student5);
 
         System.out.println(student1.equals(student2)); // (1) true: equals()를 오버라이딩 하여 같다고 판단하게 함(내용 같음)
+        System.out.println(student1 == student2); // false: 서로 다른 객체임
         System.out.println(students.size()); // (2) 5: 원래는 중복이 허용되지 않지만 hashCode()의 구현으로 서로 다른 객체로 판단
         System.out.println(students.contains(new Student("Lee", 10))); // false
         // new 연산자로 새로 만든 Student의 값이기 때문에 sudents내부에 동일한 hashCode가 존재하지 않음

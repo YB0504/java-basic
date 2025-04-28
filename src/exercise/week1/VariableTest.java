@@ -1,4 +1,4 @@
-package exercise.testremind;
+package exercise.week1;
 
 public class VariableTest {
     public static void main(String[] args) {
@@ -14,7 +14,8 @@ public class VariableTest {
 //        int x = 10.7; // int는 정수형
 //        long l = 10;
 //        double d = 3.14f;
-        
+//        boolean bool = true;
+
         // variable 1
 //        int x;
 //        System.out.println(x);
@@ -24,10 +25,10 @@ public class VariableTest {
         // variable 2
         double a = 10.5;
         int b = (int) a;
-        System.out.println(b);
+        System.out.println(b); // 10
 
         float c = 1.0f;
         double d = 1.0;
-        System.out.println(c == d);
+        System.out.println(c == d); // true
     }
 }

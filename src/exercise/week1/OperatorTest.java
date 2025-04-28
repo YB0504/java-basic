@@ -1,4 +1,4 @@
-package exercise.testremind;
+package exercise.week1;
 
 public class OperatorTest {
     public static void main(String[] args) {
@@ -78,11 +78,11 @@ public class OperatorTest {
 //        System.out.println(result);
 
         // operator 10
-        int a = 10;
-        int b = 20;
-        String str1 = "30";
-        String str2 = "40";
-        String result = a + b + str1 + str2 + a + b;
-        System.out.println(result);
+//        int a = 10;
+//        int b = 20;
+//        String str1 = "30";
+//        String str2 = "40";
+//        String result = a + b + str1 + str2 + a + b;
+//        System.out.println(result);
     }
 }

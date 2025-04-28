@@ -13,7 +13,9 @@ public class JavaTest10 {
         // 출력 결과
         //[5, 1, 2, 3, 4]
         shiftRight(array);
+        System.out.println(Arrays.toString(array));
 
+        shiftLeft(array);
         System.out.println(Arrays.toString(array));
     }
 
@@ -24,5 +26,15 @@ public class JavaTest10 {
             array[i] = array[i - 1];
         }
         array[0] = temp;
+    }
+
+    private static void shiftLeft(int[] array) {
+        int temp = array[0];
+
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+
+        array[array.length - 1] = temp;
     }
 }
