@@ -1,0 +1,48 @@
+---- 날짜와 시간의 핵심 인터페이스 ----
+ - 특정 시점의 시간: Temporal(TemporalAccessor 포함)인터페이스를 구현한다.
+   - LocalDateTime, LocalDate, LocalTime, ZonedDateTime, OffsetDateTime, Instant
+ - 시간의 간격(기간): TemporalAmount 인터페이스를 구현한다.
+   - Period, Duration
+
+ - TemporalAccessor 인터페이스
+   - 날짜와 시간을 읽기 위한 기본 인터페이스
+   - 특정 시점의 날짜와 시간 정보를 읽을 수 있는 최소한의 기능을 제공한다.
+   - 읽기 전용 접근
+ - Temporal 인터페이스
+   - TemporalAccessor 인터페이스의 하위 인터페이스로, 날짜와 시간을 조작(추가, 빼기) 하기 위한 기능을 제공한다.
+   - 읽기와 쓰기 지원
+ - TemporalAmount 인터페이스
+   - 시간의 간격(시간의 양, 기간)을 나타내며, 날짜와 시간 객체에 적용하여 그 객체를 조정할 수 있다.
+
+---- 시간의 단위와 시간 필드 ----
+ - TemporalUnit: 시간의 단위
+   - 날짜와 시간을 측정하는 단위를 나타내며, 주 사용 구현체는 ChronoUnit 열거형으로 구현된다.
+   - ChronoUnit: 다양한 시간 단위를 제공한다.(pdf 표 참고)
+     - between(Temporal, Temporal): 두 Temporal 객체 사이의 시간을 현재 ChronoUnit 단위로 측정하여 반환
+     - isDateBased(): 현재 ChronoUnit이 날짜 기반 단위인지 여부를 반환
+     - isTimeBased(): 현재 ChronoUnit이 시간 기반 단위인지 여부를 반환
+     - isSupportedBy(Temporal): 주어진 Temporal 객체가 현재 ChronoUnit 단위를 지원하는지 여부를 반환
+     - getDuration(): 현재 ChronoUnit의 기간을 Duration 객체로 반환
+ - TemporalField: 시간의 각 필드
+   - ChronoField: 날짜 및 시간을 나타내는 데 사용되는 열거형, 다양한 필드를 통해 날짜와 시간의 특정 부분을 나타낸다.
+     - getBasedUnit(): 필드의 기본 단위를 반환
+     - getRangeUnit(): 필드의 범위 단위를 반환
+     - isDateBased(): 필드가 날짜를 기반으로 하는지 여부를 나타낸다.
+       YEAR와 같은 날짜 기반 필드는 true
+     - isTimeBased(): 필드가 시간을 기반으로 하는지 여부를 나타낸다.
+       HOUR_OF_DAY 같은 시간 기반 필드는 true
+     - range(): 필드가 가질 수 있는 값의 유효 범위를 ValueRange 객체로 반환한다.
+       최소값과 최대값을 제공
+!! TemporalUnit, TemporalField는 단독으로 사용하기 보다는 주로 날짜와 시간을 조회하거나 조작할 때 사용한다.
+
+ - TemporalAccessor.get(TemporalField field)
+   - LocalDateTime을 포한한 특정 시점의 시간을 제공하는 클래스는 모두 TemporalAccessor 인터페이스를 구현한다.
+   - TemporalAccessor는 특정 시점의 시간을 조회하는 기능을 제공한다.
+   - get(TemporalField field)을 호출할 때 어떤 날짜와 시간 필드를 조회할 지
+     TemporalField의 구현인 ChronoField를 인수로 전달하면 된다.
+
+ - Temporal plus(long amountToAdd, TemporalUnit unit)
+   - LocalDateTime을 포한한 특정 시점의 시간을 제공하는 클래스는 모두 Temporal 인터페이스를 구현한다.
+   - Temporal은 특정 시점의 시간을 조작!하는 기능을 제공한다.
+   - 불변이므로 반환 값을 받아야 한다.
+
