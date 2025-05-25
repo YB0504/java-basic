@@ -10,7 +10,7 @@ public class MainV4 {
 //        NetworkServiceV4 networkService = new NetworkServiceV4();
          
         // try - with - resources 를 사용할 수 있도록
-        NetworkServiceV4 networkService = new NetworkServiceV4();
+        NetworkServiceV5 networkService = new NetworkServiceV5();
 
         Scanner scanner = new Scanner(System.in);
         while (true) {

@@ -2,7 +2,6 @@ package exception.ex4;
 
 import exception.ex4.exception.ConnectExceptionV4;
 import exception.ex4.exception.SendExceptionV4;
-import lang.AutoCloseable;
 
 public class NetworkClientV5 implements AutoCloseable {
 
@@ -31,7 +30,7 @@ public class NetworkClientV5 implements AutoCloseable {
     }
 
     public void disconnect() {
-        System.out.println(address+" 서버 연결 해제");
+        System.out.println(address + " 서버 연결 해제");
     }
 
     public void initError(String data) {
