@@ -4,14 +4,20 @@ import java.time.LocalDateTime;
 
 public class Library {
 
-    private Books bookList;
     private boolean status;
     private LocalDateTime rentalTime;
     private LocalDateTime returnTime;
 
+    public boolean isStatus() {
+        return status;
+    }
 
-    public void setBookList(Books books) {
-        this.bookList = books;
+    public LocalDateTime getRentalTime() {
+        return rentalTime;
+    }
+
+    public LocalDateTime getReturnTime() {
+        return returnTime;
     }
 }
 

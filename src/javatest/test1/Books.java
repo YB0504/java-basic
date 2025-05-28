@@ -1,28 +1,25 @@
 package javatest.test1;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Books {
 
-    private String bookName;
-    private String author;
+    private List<String> bookName;
+    private List<String> author;
 
-    public List<Books> addBooks(String bookName, String author) {
-        List<Books> list = new ArrayList<>();
-        Books books = new Books(bookName, author);
-        list.add(books);
-        return list;
+    public List<String> getBookName() {
+        return bookName;
     }
 
-    public List<String> addBookAuthor(String author) {
-        List<String> list = new ArrayList<>();
-        list.add(author);
-        return list;
+    public List<String> getAuthor() {
+        return author;
     }
 
-    public Library bookList(Books books) {
-        Library library = new Library();
-        library.setBookList(books);
+    public void setBookName(List<String> bookName) {
+        this.bookName = bookName;
+    }
+
+    public void setAuthor(List<String> author) {
+        this.author = author;
     }
 }
